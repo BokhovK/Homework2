@@ -52,12 +52,15 @@ public class Main {
         System.out.println("percentWeight="+percentWeight);
         //Задача 8
         var allTime=640;
-        var workPeople=640/8;
+        var workPeople=allTime/8;
         System.out.println("Всего работников в компании "+workPeople+" человек");
-        var allPeople=80+94;
-        var Time=640/allPeople;
+        var mainPeople=80;
+        var plusPeople=94;
+        var allPeople=mainPeople+plusPeople;
+        var time=8;
+        var anotherTime=time*allPeople;
         System.out.print("Если в компании работает "+allPeople+" человек,то всего ");
-        System.out.print(Time+" часов работы может быть поделено между сотрудниками");
+        System.out.print(anotherTime+" часов работы может быть поделено между сотрудниками");
 
     }
 }
