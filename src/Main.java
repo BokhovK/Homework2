@@ -26,12 +26,12 @@ public class Main {
             System.out.println("Если скорость равна "+speed+" км/ч можно есздить спокойно");
         }
         //Задача 4
-        int agePeople=22;
-        if (agePeople == 2 || agePeople <= 6) {
+        int agePeople=32;
+        if (agePeople == 2 && agePeople < 6) {
             System.out.println("Если человеку "+agePeople+", то ему нужно ходить в детский сад");
-        } else if(agePeople == 7 || agePeople <= 17) {
+        } else if(agePeople == 7 && agePeople < 17) {
             System.out.println("Если человеку " + agePeople + ", то ему нужно ходить в школу");
-        } else if (agePeople >= 18 || agePeople <= 24) {
+        } else if (agePeople >= 18 && agePeople < 24) {
             System.out.println("Если человеку " + agePeople + ", то ему нужно ходить в университет");
         } else if (agePeople > 24) {
             System.out.println("Если человеку " + agePeople + ", то ему пора ходить на работу");
@@ -45,22 +45,22 @@ public class Main {
         } else if(kid>14){
             System.out.println("Если возраст ребёнка равен "+kid+", то можно кататься без сопровождения взрослого");
         }
-        //Задача 6
-        int peoples=80;
-        int train=102;
-        int seatTrain=60;
-        int stayTrain=train-seatTrain;
-        if (peoples>=seatTrain && peoples<=seatTrain) {
+         //Задача 6
+        int peoples = 85;
+        int train = 102;
+        int seatTrain = 60;
+        int stayTrain = train-seatTrain;
+        if (peoples <= seatTrain) {
             System.out.println("Если в вагон хотят зайти "+peoples+" людей, то они могут занять сидячее место");
-        } else if(peoples>=stayTrain || peoples<=stayTrain){
+        } else if(peoples < stayTrain && peoples > seatTrain) {
             System.out.println("Если в вагон хотят зайти "+peoples+" людей, то они могут занять сидячие и стоячие места");
-        } else if (peoples>train) {
+        } else if (peoples > train) {
             System.out.println("Если в вагон хотят зайти " + peoples + " людей, то не получится, так как вагон будет забит");
         }
         //Задача 7
-        int one=1;
+        int one=4;
         int two=2;
-        int three=3;
+        int three=1;
         if (one>two && one>three) {
             System.out.println("Самое большое число это "+one);
         } else if (two>three) {
