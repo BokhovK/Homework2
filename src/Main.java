@@ -18,14 +18,18 @@ public class Main {
 //Задача 2
         int clientDeviceYear=2015;
         int clientOsOne=1;
-        if (clientDeviceYear<=2015 && clientOsOne>=1) {
+        if (clientDeviceYear<2015 && clientOsOne>=1) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else {
+        } else if (clientDeviceYear<2015 && clientOsOne>=0) {
             System.out.println("Установите облегчëнную версию приложения для Android по ссылке");
+        } else if (clientDeviceYear>=2015 && clientOsOne>=1) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else  {
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
          // Задача 3
         int year=1945;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0 || year >= 1584 ) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
