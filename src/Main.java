@@ -1,63 +1,76 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        //Задача 1
-        var dog = 8.0;
-        var cat = 3.6;
-        var paper = 763789;
-        System.out.println("dog" + dog);
-        System.out.println("cat" + cat);
-        System.out.println("paper" + paper);
+       //Задача 1
+        int age=20;
+        int oldAge=18;
+        if (age >= oldAge) {
+        System.out.println("Если возраст человека равен "+age+", то он совершеннолетний");
+        } else {
+        System.out.println("Если возраст человека равен"+age+" он не достиг совершеннолетия, нужно немного подождать");
+        }
         //Задача 2
-       dog = dog + 4;
-       cat = cat + 4;
-       paper = paper + 4;
-        System.out.println("dog="+dog);
-        System.out.println("cat="+cat);
-        System.out.println("paper="+paper);
-        //задача 3
-       dog = dog - 3.5;
-       cat = cat - 1.6;
-       paper = paper - 7639;
-        System.out.println("dog=" + dog);
-        System.out.println("cat=" + cat);
-        System.out.println("paper=" + paper);
+        int temprature=2;
+        int normal=5;
+        if (temprature<normal) {
+            System.out.println("На улице " + temprature + " градуса, нужно надеть шапку");
+        } else if(temprature>normal){
+            System.out.println("На улице " + temprature + " градуса можно идти без шапки");
+        }
+        //Задача 3
+        int speed=80;
+        int normSpeed=60;
+        if (speed>normSpeed) {
+            System.out.println("Если скорость равна " + speed + " км/ч придётся заплатить штраф");
+        } else if(speed<normSpeed) {
+            System.out.println("Если скорость равна "+speed+" км/ч можно есздить спокойно");
+        }
         //Задача 4
-        var friend=19;
-        System.out.println(friend);
-        friend=friend+2;
-        System.out.println("friend="+friend);
-        friend=friend/7;
-        System.out.println("friend="+friend);
-        //Задача 5
-        var frog=3.5;
-        System.out.println(frog);
-        frog=frog*10;
-        System.out.println("frog="+frog);
-        frog=frog/3.5;
-        System.out.println("frog="+frog);
-        frog=frog+4;
-        System.out.println("frog="+frog);
-        //Задача 5
-        var firstBoxer=78.2;
-        var secondBoxer=82.7;
-        var amountWeight=firstBoxer+secondBoxer;
-        var differenceWeight=secondBoxer-firstBoxer;
-        System.out.println("amountWeight="+amountWeight);
-        System.out.println("differenceWeight="+differenceWeight);
+        int agePeople=32;
+        if (agePeople == 2 && agePeople < 6) {
+            System.out.println("Если человеку "+agePeople+", то ему нужно ходить в детский сад");
+        } else if(agePeople == 7 && agePeople < 17) {
+            System.out.println("Если человеку " + agePeople + ", то ему нужно ходить в школу");
+        } else if (agePeople >= 18 && agePeople < 24) {
+            System.out.println("Если человеку " + agePeople + ", то ему нужно ходить в университет");
+        } else if (agePeople > 24) {
+            System.out.println("Если человеку " + agePeople + ", то ему пора ходить на работу");
+        }
+        //задача 5
+        int kid=17;
+        if(kid<5) {
+            System.out.println("Если возраст ребёнка равен "+kid+" нельзя кататься на атракционе");
+        } else if(kid>5 && kid<14) {
+            System.out.println("Если возраст ребёнка равен "+kid+", то можно кататься в сопровождении взрослого");
+        } else if(kid>14){
+            System.out.println("Если возраст ребёнка равен "+kid+", то можно кататься без сопровождения взрослого");
+        }
+         //Задача 6
+        int peoples = 85;
+        int train = 102;
+        int seatTrain = 60;
+        int stayTrain = train-seatTrain;
+        if (peoples <= seatTrain) {
+            System.out.println("Если в вагон хотят зайти "+peoples+" людей, то они могут занять сидячее место");
+        } else if(peoples < stayTrain && peoples > seatTrain) {
+            System.out.println("Если в вагон хотят зайти "+peoples+" людей, то они могут занять сидячие и стоячие места");
+        } else if (peoples > train) {
+            System.out.println("Если в вагон хотят зайти " + peoples + " людей, то не получится, так как вагон будет забит");
+        }
         //Задача 7
-        differenceWeight=secondBoxer-firstBoxer;
-        var percentWeight=(secondBoxer%firstBoxer);
-        System.out.println("differenceWeight="+differenceWeight);
-        System.out.println("percentWeight="+percentWeight);
-        //Задача 8
-        var allTime=640;
-        var workPeople=640/8;
-        System.out.println("Всего работников в компании "+workPeople+" человек");
-        var allPeople=80+94;
-        var Time=640/allPeople;
-        System.out.print("Если в компании работает "+allPeople+" человек,то всего ");
-        System.out.print(Time+" часов работы может быть поделено между сотрудниками");
+        int one=4;
+        int two=2;
+        int three=1;
+        if (one>two && one>three) {
+            System.out.println("Самое большое число это "+one);
+        } else if (two>three) {
+            System.out.println("Самое большое число это "+two);
+        } else if (three>two && three>one) {
+            System.out.println("Самое большое число это "+three);
+        }
+
+
+
 
     }
 }
