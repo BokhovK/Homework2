@@ -3,51 +3,66 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
       // Task 1
-        System.out.println("Task 1 & Task 2");
-        int [] num = new int [3];
-        num [1] = 1;
-        for ( int i = 1; i <= 3; i++ ) {
-            System.out.print(i + " ");
+        System.out.println("Task 1");
+        int [] num1 = new int[3];
+        for (int i = 0; i < num1.length; i++) {
+            num1[i]=i+1;
+        }
+        double [] num2 = {1.57, 7.654, 9.986};
+        boolean num3 [] = new boolean[]{false, true} ;
+        //Task 2
+        System.out.println("Task 2");
+        for (int i = 0; i < num1.length; i++) {
+            System.out.print(num1[i]);
+            if (i < num1.length - 1) {
+                System.out.print(", ");
+            }
         }
         System.out.println(" ");
-        double [] numb = {1.57, 7.654, 9.986};
-        System.out.print(numb[0]+" ");
-        System.out.print(numb[1]+" ");
-        System.out.print(numb[2]+" ");
-        System.out.println(" ");
-        int [] number = new int [50];
-        number [0] = 10;
-        for ( int b = 10; b <=50; b++) {
-            System.out.print(b + " ");
+        for (int i = 0; i < num2.length; i++) {
+            System.out.print(num2[i]);
+            if (i < num2.length - 1) {
+                System.out.print(", ");
+            }
         }
         System.out.println(" ");
+        for (int i = 0; i < num3.length; i++) {
+            System.out.print(num3[i]);
+            if (i < num3.length - 1) {
+                System.out.print(", ");
+            }
+        }
         //Task 3
         System.out.println("Task 3");
-        int [] numa = new int [3];
-        numa [1] = 3;
-        for ( int i = 3; i >= 1; i-- ) {
-            System.out.print(i + " ");
+        for (int i = num1.length - 1; i>=0; i--) {
+            System.out.print(num1[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
         }
         System.out.println(" ");
-        double [] numba = {1.57, 7.654, 9.986};
-        System.out.print(numba[2]+" ");
-        System.out.print(numba[1]+" ");
-        System.out.print(numba[0]+" ");
+        for (int i = num2.length - 1; i>=0; i--) {
+            System.out.print(num2[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
+        }
         System.out.println(" ");
-        int [] numbera = new int [50];
-        numbera [0] = 10;
-        for ( int b = 50; b >=10; b--) {
-            System.out.print(b + " ");
+        for (int i = num3.length - 1; i>=0; i--) {
+            System.out.print(num3[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
         }
         System.out.println(" ");
         //Task 4
         System.out.println("Task 4");
-        int [] arrNumc = {1,2,3};
-       for( int c=0; c < arrNumc.length; c++) {
-           if (arrNumc[c] % 2 != 0) {
-               arrNumc[c] += 1;
-           }
-       }
-        System.out.println(Arrays.toString(arrNumc));
+        for (int i = 0; i < num1.length; i++) {
+            if (num1[i] % 2 == 1) {
+                num1[i] = i++;
+                System.out.println(Arrays.toString(num1));
+            }
+        }
+
     }
 }
