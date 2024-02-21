@@ -2,67 +2,65 @@ import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
-      // Task 1
-        System.out.println("Task 1");
-        int [] num1 = new int[3];
-        for (int i = 0; i < num1.length; i++) {
-            num1[i]=i+1;
-        }
-        double [] num2 = {1.57, 7.654, 9.986};
-        boolean num3 [] = new boolean[]{false, true} ;
-        //Task 2
-        System.out.println("Task 2");
-        for (int i = 0; i < num1.length; i++) {
-            System.out.print(num1[i]);
-            if (i < num1.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
-        for (int i = 0; i < num2.length; i++) {
-            System.out.print(num2[i]);
-            if (i < num2.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
-        for (int i = 0; i < num3.length; i++) {
-            System.out.print(num3[i]);
-            if (i < num3.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        //Task 3
-        System.out.println("Task 3");
-        for (int i = num1.length - 1; i>=0; i--) {
-            System.out.print(num1[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
-        for (int i = num2.length - 1; i>=0; i--) {
-            System.out.print(num2[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
-        for (int i = num3.length - 1; i>=0; i--) {
-            System.out.print(num3[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
-        //Task 4
-        System.out.println("Task 4");
-        for (int i = 0; i < num1.length; i++) {
-            if (num1[i] % 2 == 1) {
-                num1[i] = i++;
-                System.out.println(Arrays.toString(num1));
-            }
-        }
+        int[] arr = generateRandomArray();
+        System.out.println("Сгенерированный массив " +Arrays.toString(arr));
+        task1(arr);
+        task2(arr);
+        task3(arr);
+        task4();
 
+    }
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
+    public static void task1(int[]arr) {
+        System.out.println("Task 1");
+        int sum=0;
+        for(int money : arr) {
+            sum += money;
+        }
+        System.out.println("Сумма трат за месяц составила " +sum+ " рублей");
+
+    }
+    public static void task2(int[]arr) {
+        System.out.println("Task 2");
+     if (arr.length == 0) {
+         return;
+     }
+     int min = arr[0];
+     int max = arr[0];
+        for (int money : arr) {
+
+            if (money>min) {
+                min = money;
+            }
+            if (money<max){
+                max = money;
+            }
+        }
+        System.out.println("Сумма трат за месяц составила " +min+ " рублей. Максимальная сумма трат за месяц составила "+max);
+    }
+    public static void task3(int[]arr) {
+        System.out.println("Task 3");
+        int sum=0;
+        for(int money : arr) {
+            sum += money;
+        }
+        double average = (double) sum / arr.length;
+        System.out.println("Средняя сумма трат за месяц составила "+average+" рублей");
+
+    }
+    public static void task4() {
+        System.out.println("Task 4");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
     }
 }
