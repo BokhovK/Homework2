@@ -37,10 +37,10 @@ public class Main {
      int max = arr[0];
         for (int money : arr) {
 
-            if (money>min) {
+            if (money<min) {
                 min = money;
             }
-            if (money<max){
+            if (money>max){
                 max = money;
             }
         }
