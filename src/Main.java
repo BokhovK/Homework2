@@ -1,66 +1,63 @@
-import java.security.spec.RSAOtherPrimeInfo;
-import java.util.Arrays;
+import java.time.LocalDate;
+
 public class Main {
+
     public static void main(String[] args) {
-        int[] arr = generateRandomArray();
-        System.out.println("Сгенерированный массив " +Arrays.toString(arr));
-        task1(arr);
-        task2(arr);
-        task3(arr);
-        task4();
-
-    }
-    public static int[] generateRandomArray() {
-        java.util.Random random = new java.util.Random();
-        int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
+        printInfoAboutYear(2024);
+        printInfoAboutVersion(1, 2024);
+        int diliveryDays = calculateDiliveryCard(95);
+        if (diliveryDays != -1) {
+            System.out.println("Кол-во дней доставки " + diliveryDays);
+        } else {
+            System.out.println("Доставки нет");
         }
-        return arr;
     }
 
-    public static void task1(int[]arr) {
-        System.out.println("Task 1");
-        int sum=0;
-        for(int money : arr) {
-            sum += money;
+    public static void printInfoAboutYear(int year) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println(year + "- високосный год");
+        } else {
+            System.out.println(year + "- не високосный год");
         }
-        System.out.println("Сумма трат за месяц составила " +sum+ " рублей");
-
     }
-    public static void task2(int[]arr) {
-        System.out.println("Task 2");
-     if (arr.length == 0) {
-         return;
-     }
-     int min = arr[0];
-     int max = arr[0];
-        for (int money : arr) {
 
-            if (money<min) {
-                min = money;
-            }
-            if (money>max){
-                max = money;
-            }
-        }
-        System.out.println("Сумма трат за месяц составила " +min+ " рублей. Максимальная сумма трат за месяц составила "+max);
-    }
-    public static void task3(int[]arr) {
-        System.out.println("Task 3");
-        int sum=0;
-        for(int money : arr) {
-            sum += money;
-        }
-        double average = (double) sum / arr.length;
-        System.out.println("Средняя сумма трат за месяц составила "+average+" рублей");
+    //Task 2
 
-    }
-    public static void task4() {
-        System.out.println("Task 4");
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+    static void printInfoAboutVersion(int os, int productionYear) {
+        int current = LocalDate.now().getYear();
+        if (os == 0 && productionYear == current) {
+            System.out.println("Установите версию для iOS");
+        } else if (os == 0 && productionYear < current) {
+            System.out.println("Установите облегченную версию для iOS");
+        } else if (os == 1 && productionYear == current) {
+            System.out.println("Установите версию для Android");
+        } else if (os == 1 && productionYear < current) {
+            System.out.println("Установите облегченную версию для Android");
+        } else {
+            System.out.println("Некорректная ОС!");
         }
+    }
+
+    //Task 3
+    static int calculateDiliveryCard(int distance) {
+        if (distance < 0 || distance > 100) {
+            return -1;
+        }
+        int diliveryDays = 1;
+        if (distance >= 20) {
+            diliveryDays++;
+        }
+        if (distance >= 60) {
+            diliveryDays++;
+        }
+        return diliveryDays;
     }
 }
+
+
+
+
+
+
+
+
