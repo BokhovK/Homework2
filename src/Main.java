@@ -14,8 +14,7 @@ public class Main {
     }
 
     public static void print(Book book) {
-        System.out.println("Автор: " + book.getAuthor().getName() + " " + book.getAuthor().getSurname() +
-                        ", название: " + book.getTitle() + ", год издания: " + book.getYear());
+        System.out.println(book);
     }
 
 }
