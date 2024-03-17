@@ -1,3 +1,4 @@
+
 import java.util.Objects;
 
 public class Employee {
@@ -19,25 +20,32 @@ public class Employee {
     public String getFullName() {
         return fullName;
     }
-
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
     public int getDepartment() {
         return department;
     }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public void setDepartment(int department) {
         this.department = department;
     }
-
+    public int getSalary() {
+        return salary;
+    }
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public static int getIdCounter() {
+        return idCounter;
+    }
+    public static void setIdCounter(int idCounter) {
+        Employee.idCounter = idCounter;
     }
 
     @Override
