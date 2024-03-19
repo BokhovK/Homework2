@@ -1,51 +1,48 @@
-
 import java.util.Objects;
 
 public class Employee {
+    private static int idGenerate = 1;
     private String fullName;
     private int department;
     private int salary;
     private int id;
 
-    public static int idCounter = 0;
+
 
     public Employee(String fullName, int department, int salary) {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
-        idCounter++;
-        id = idCounter;
+        this.id = idGenerate++;
     }
-
     public String getFullName() {
         return fullName;
-    }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
     public int getDepartment() {
         return department;
     }
-    public void setDepartment(int department) {
-        this.department = department;
-    }
+
     public int getSalary() {
         return salary;
     }
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
+
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
-    public static int getIdCounter() {
-        return idCounter;
+
+    public void setDepartment(int department) {
+        this.department = department;
     }
-    public static void setIdCounter(int idCounter) {
-        Employee.idCounter = idCounter;
+    @Override
+    public String toString() {
+        return "Сотрудник: " + fullName +
+                ", отдел: " + department +
+                ", зарплата: " + salary + " рублей" +
+                ", id: " + id;
     }
 
     @Override
@@ -59,14 +56,5 @@ public class Employee {
     @Override
     public int hashCode() {
         return Objects.hash(fullName, department, salary, id);
-    }
-
-    @Override
-    public String toString() {
-        return "Сотрудник: " + fullName +
-                ", отдел: " + department +
-                ", зарплата: " + salary + " рублей" +
-                ", id: " + id;
-
     }
 }
